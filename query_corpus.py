@@ -127,7 +127,7 @@ def post_data(data,url):
     last_page = soup.find('td', {'class': 'pages'}).find_all('a')[-1]
     last_page_num = int(re.search(r'page=([0-9]+)', str(last_page)).groups()[0]) 
     search_info = soup.find('table',{'class': 'search_info'})
-    return sid, last_page_num
+    return unrand_sid, last_page_num
 
 
 def get_response(sid, page_num):
