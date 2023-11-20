@@ -101,6 +101,7 @@ def main(occurences_per_page, max_distance, word1, lex1, gram1, word2, lex2, gra
             page_response = get_response(sid, page_num)
             print(f'Parsing entries for page {page_num}')
             parsed_entries = pr.parse_entries(page_response.text)
+            print(f'{len(parsed_entries)} entries found')
             for i in range(0,len(parsed_entries)):
                 ddict = pr.create_entry(parsed_entries[i],entry_id)
                 jout = json.dumps(ddict) + '\n'
